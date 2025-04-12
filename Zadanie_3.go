@@ -4,23 +4,24 @@ import (
 	"fmt"
 )
 
-type Node struct {
-	next  *Node
-	Value rune
-}
+//type Node struct {
+//	next  *Node
+//	Value rune
+//}
 
-type Odnosvyaz struct {
-	begin  *Node
-	length int
-}
+//type Odnosvyaz struct {
+//	begin  *Node
+//	length int
+//}
 
-func Create_sp() *Odnosvyaz {
-	return &Odnosvyaz{begin: nil, length: 0}
-}
+//func Create_sp() *Odnosvyaz {
+//	return &Odnosvyaz{begin: nil, length: 0}
+//}
 func (sp *Odnosvyaz) Add(value rune) {
 	new_node := &Node{next: nil, Value: value}
 	if sp.length == 0 {
 		sp.begin = new_node
+	}
 		sp.length++
 	} else {
 		node := sp.begin
