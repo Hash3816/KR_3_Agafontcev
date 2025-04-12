@@ -2,30 +2,31 @@ package main
 
 import "fmt"
 
-//type Node struct {
-//	next  *Node
-//	Value rune
-//
+type Node struct {
+	next  *Node
+	Value rune
+}
 
-//type Odnosvyaz struct {
-//	begin  *Node
-//	length int
-//}
+type Odnosvyaz struct {
+	begin  *Node
+	length int
+}
 
-//func Create_sp() *Odnosvyaz {
-//	return &Odnosvyaz{begin: nil, length: 0}
-//}
 
-//func (sp *Odnosvyaz) Print_sp() {
-//	if sp.length == 0 {
-//		fmt.Println("Список пуст.")
-//	}
-//	now_node := sp.begin
-//	for now_node != nil {
-//		fmt.Println(string(now_node.Value))
-//		now_node = now_node.next
-//	}
-//}
+func Create_sp() *Odnosvyaz {
+	return &Odnosvyaz{begin: nil, length: 0}
+}
+
+func (sp *Odnosvyaz) Print_sp() {
+	if sp.length == 0 {
+		fmt.Println("Список пуст.")
+	}
+	now_node := sp.begin
+	for now_node != nil {
+		fmt.Println(string(now_node.Value))
+		now_node = now_node.next
+	}
+}
 
 func (sp *Odnosvyaz) Add(value rune) {
 	new_node := &Node{next: nil, Value: value}
@@ -79,6 +80,7 @@ func (sp *Odnosvyaz) Swap(ind1 int, ind2 int) {
 	memory_link_2.Value = bufer
 
 }
+
 func (list *Odnosvyaz) HeapSort() {
 	n := list.length
 	for i := n/2 - 1; i >= 0; i-- {
